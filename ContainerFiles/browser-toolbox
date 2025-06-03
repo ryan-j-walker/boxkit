@@ -3,13 +3,13 @@ FROM quay.io/fedora/fedora-toolbox:latest
 LABEL com.github.containers.toolbox="true" \
       usage="This image is meant to be used with the toolbox or distrobox command" \
       summary="An example ContainerFile to demonstrate multiple image builds." \
-      maintainer="faeizmahrus@outlook.com"
+      maintainer="ryanwalker8484@gmail.com"
 
 # Copy the setup scripts and package list
-COPY ../scripts/fedora-example.sh /
+COPY ../scripts/browser-toolbox.sh /
 COPY ../scripts/distrobox-shims.sh /
-COPY ../packages/fedora-example.packages /
+COPY ../packages/browser-toolbox.packages /
 
 # Run the setup scripts
-RUN chmod +x fedora-example.sh distrobox-shims.sh && /fedora-example.sh
-RUN rm /fedora-example.sh /distrobox-shims.sh /fedora-example.packages
+RUN chmod +x browser-toolbox.sh distrobox-shims.sh && /browser-toolbox.sh
+RUN rm /browser-toolbox.sh /distrobox-shims.sh /browser-toolbox.packages
