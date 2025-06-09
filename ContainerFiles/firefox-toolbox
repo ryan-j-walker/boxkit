@@ -1,0 +1,15 @@
+FROM registry.fedoraproject.org/fedora-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This image is meant to be used with the toolbox or distrobox command" \
+      summary="A Fedora container with Firefox installed." \
+      maintainer="ryanwalker8484@gmail.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/firefox-toolbox.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/firefox-toolbox.packages /
+
+# Run the setup scripts
+RUN chmod +x firefox-toolbox.sh distrobox-shims.sh && /firefox-toolbox.sh
+RUN rm /firefox-toolbox.sh /distrobox-shims.sh /firefox-toolbox.packages
