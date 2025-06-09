@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (2025-06-09)
+
+
+### Features
+
+* initial commit ([34d97ff](https://github.com/ryan-j-walker/boxkit/commit/34d97ffe6407afb6e7feff0dd0952807e30b71ec))
+
 ## [1.2.0](https://github.com/ublue-os/boxkit/compare/v1.1.0...v1.2.0) (2025-01-04)
 
 
