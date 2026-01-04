@@ -1,0 +1,15 @@
+FROM quay.io/fedora/fedora-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This image is meant to be used with the toolbox or distrobox command" \
+      summary="An example ContainerFile to demonstrate multiple image builds." \
+      maintainer="ryanwalker8484@gmail.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/vivaldi.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/vivaldi.packages /
+
+# Run the setup scripts
+RUN chmod +x vivaldi.sh distrobox-shims.sh && /vivaldi.sh
+RUN rm /vivaldi.sh /distrobox-shims.sh /vivaldi.packages

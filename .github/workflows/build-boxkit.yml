@@ -29,6 +29,7 @@ jobs:
       matrix:
         containerfile: 
           - librewolf
+          - vivaldi
     steps:
       # Clone code to runner
       - name: Checkout
