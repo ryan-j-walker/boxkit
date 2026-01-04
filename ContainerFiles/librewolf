@@ -1,0 +1,15 @@
+FROM quay.io/fedora/fedora-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This image is meant to be used with the toolbox or distrobox command" \
+      summary="An example ContainerFile to demonstrate multiple image builds." \
+      maintainer="ryanwalker8484@gmail.com"
+
+# Copy the setup scripts and package list
+COPY ../scripts/librewolf.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/librewolf.packages /
+
+# Run the setup scripts
+RUN chmod +x librewolf.sh distrobox-shims.sh && /librewolf.sh
+RUN rm /librewolf.sh /distrobox-shims.sh /librewolf.packages
