@@ -29,7 +29,6 @@ jobs:
       matrix:
         containerfile: 
           - librewolf
-          - proton-mail
           - vivaldi
     steps:
       # Clone code to runner
