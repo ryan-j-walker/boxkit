@@ -1,4 +1,4 @@
-# boxkit
+# boxkit &nbsp; [![build badge](https://github.com/ryan-j-walker/boxkit/actions/workflows/build-boxkit.yml/badge.svg)](https://github.com/ryan-j-walker/boxkit/actions/workflows/build-boxkit.yml)
 
 ## What is boxkit ?
 
