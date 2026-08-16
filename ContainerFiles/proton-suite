@@ -1,0 +1,15 @@
+FROM quay.io/fedora/fedora-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This image is meant to be used with the toolbox or distrobox command" \
+      summary="An example ContainerFile to demonstrate multiple image builds." \
+      maintainer="ryanwalker8484@pm.me"
+
+# Copy the setup scripts and package list
+COPY ../scripts/proton-suite.sh /
+COPY ../scripts/distrobox-shims.sh /
+COPY ../packages/proton-suite.packages /
+
+# Run the setup scripts
+RUN chmod +x proton-suite.sh distrobox-shims.sh && /proton-suite.sh
+RUN rm /proton-suite.sh /distrobox-shims.sh /proton-suite.packages

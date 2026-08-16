@@ -30,7 +30,7 @@ jobs:
         containerfile: 
 #          - boxkit
        #- fedora-example # Included as an example to demonstrate multi-image builds, uncomment to build the fedora-example container too
-          - librewolf
+          - proton-suite
           - vivaldi
     steps:
       # Clone code to runner
