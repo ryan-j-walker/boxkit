@@ -16,4 +16,4 @@ wget https://proton.me/download/pass/linux/ProtonPass.rpm
 dnf5 install -y ./ProtonPass.rpm
 rm -f ./ProtonPass.rpm
 
-grep -v '^#' ./proton-suite.packages | xargs dnf install -y
+grep -v '^#' ./proton-apps.packages | xargs dnf install -y

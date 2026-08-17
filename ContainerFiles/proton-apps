@@ -6,10 +6,10 @@ LABEL com.github.containers.toolbox="true" \
       maintainer="ryanwalker8484@pm.me"
 
 # Copy the setup scripts and package list
-COPY ../scripts/proton-suite.sh /
+COPY ../scripts/proton-apps.sh /
 COPY ../scripts/distrobox-shims.sh /
-COPY ../packages/proton-suite.packages /
+COPY ../packages/proton-apps.packages /
 
 # Run the setup scripts
-RUN chmod +x proton-suite.sh distrobox-shims.sh && /proton-suite.sh
-RUN rm /proton-suite.sh /distrobox-shims.sh /proton-suite.packages
+RUN chmod +x proton-apps.sh distrobox-shims.sh && /proton-apps.sh
+RUN rm /proton-apps.sh /distrobox-shims.sh /proton-apps.packages
